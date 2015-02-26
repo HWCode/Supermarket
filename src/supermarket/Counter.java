@@ -5,10 +5,14 @@
  */
 package supermarket;
 
+import java.util.Queue;
+
 /**
  *
  * @author Davyn
  */
-public class Counter {
+public class Counter<E> {
+    
+    private java.util.Queue<E> carts;
     
 }

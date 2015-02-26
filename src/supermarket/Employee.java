@@ -11,4 +11,12 @@ package supermarket;
  */
 public class Employee {
     
+    private String name;
+    private long idNum;
+    
+    public Employee(String name, long id){
+        this.name = name;
+        this.idNum = id;
+    
+    }
 }
