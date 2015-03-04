@@ -47,15 +47,20 @@ public class Cart {
   
     
     public void removeItem(Item item){
+        Pair myPair = null;
+        
         for(Pair pair : cartArray){
+            
             if( pair.getItem().equals(item) ){
                 if( pair.getNumber() > 1 ){
                     pair.decrementNumber();
                 }else{
-                cartArray.remove(pair);
+                //cartArray.remove(pair);
+                    myPair = pair;
                 }
             }
         }
+        cartArray.remove(myPair);
         
         
     }

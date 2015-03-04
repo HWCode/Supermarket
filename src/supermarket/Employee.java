@@ -12,11 +12,11 @@ package supermarket;
 public class Employee {
     
     private String name;
-    private long idNum;
+    private long idNum = 9999;
     
-    public Employee(String name, long id){
+    public Employee(String name){
         this.name = name;
-        this.idNum = id;
+        this.idNum = ++idNum;
     
     }
 }

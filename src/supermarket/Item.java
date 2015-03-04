@@ -12,12 +12,13 @@ package supermarket;
  */
 public class Item {
     private String name;
-    private long id;
+    private long id = 1000;
     private int price;
     
     
-    public Item(String name, long id, int price){
-        this.id = id;
+            
+    public Item(String name, int price){
+        this.id = id++;
         this.name = name;
         this.price = price;
      
