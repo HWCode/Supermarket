@@ -25,7 +25,10 @@ public class Cart {
         this.myName = myName;
         bills = new Stack();
     }
-    
+    /**
+     * 
+     * @param item 
+     */
     public void addItem(Item item){
         boolean alreadyIn = false;
         
@@ -45,7 +48,10 @@ public class Cart {
     }
     
   
-    
+    /**
+     * 
+     * @param item 
+     */
     public void removeItem(Item item){
         Pair myPair = null;
         
@@ -65,11 +71,17 @@ public class Cart {
         
     }
     
-    
+    /**
+     * 
+     */
     public void cycle(){
         for(Pair pair : cartArray){
             System.out.println(pair.getItem().returnName()+": "+pair.getNumber());
         }
+    }
+    
+    public ArrayList<Pair> getCart(){
+        return this.cartArray;
     }
     
     /**

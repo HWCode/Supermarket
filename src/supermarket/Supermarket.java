@@ -34,7 +34,10 @@ public class Supermarket {
         cart.removeItem(lime);
         cart.removeItem(orange);
         cart.addItem(candy);
-        Counter counter = new Counter();
+        
+        
+        Counter counter = new Counter(new Employee("James"));
+        
         counter.addCart(cart);
         counter.addCart(cart1);
         counter.addCart(cart2);

@@ -15,30 +15,60 @@ public class Counter<Carts>  {
    
     private java.util.Queue<Carts> carts;
     private java.util.Stack bills;
+    private Employee currentEmployee;
+    private static int thisCounterNum;
     
-    public Counter(){
+    /**
+     * 
+     * @param employee 
+     */
+    public Counter(Employee employee){
         carts = new java.util.LinkedList<Carts>();
         bills = new java.util.Stack<>();
+        currentEmployee = employee;
+        ++thisCounterNum;
     }
     
+    /**
+     * 
+     * @param customer 
+     */
     public void addCart(Cart customer){
         carts.add((Carts) customer);
     }
     
+    /**
+     * 
+     */
     public void lookAt(){
         carts.element();
     }
     
+    /**
+     * 
+     * @return 
+     */
     public int size(){
         return carts.size();
     }
     
+    /**
+     * 
+     * @return 
+     */
     public boolean isEmpty(){return true;}
     
+    /**
+     * 
+     * @return 
+     */
     public Cart front(){
         return (Cart) carts.element();
     }
     
+    /**
+     * 
+     */
     public void enqueue(){}
     
     
