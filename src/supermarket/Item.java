@@ -14,13 +14,15 @@ public class Item {
     private String name;
     private long id = 1000;
     private int price;
+    private boolean recycable;
     
     
             
-    public Item(String name, int price){
+    public Item(String name, int price, boolean recyc){
         this.id = id++;
         this.name = name;
         this.price = price;
+        this.recycable = recyc;
      
     }
     /**

@@ -14,7 +14,7 @@ import java.util.Queue;
 public class Counter<Carts>  {
    
     private java.util.Queue<Carts> carts;
-    private java.util.Stack bills;
+    private java.util.Stack<Bill> bills;
     private Employee currentEmployee;
     private static int thisCounterNum;
     
@@ -24,7 +24,7 @@ public class Counter<Carts>  {
      */
     public Counter(Employee employee){
         carts = new java.util.LinkedList<Carts>();
-        bills = new java.util.Stack<>();
+        bills = new java.util.Stack<Bill>();
         currentEmployee = employee;
         ++thisCounterNum;
     }
@@ -36,6 +36,20 @@ public class Counter<Carts>  {
     public void addCart(Cart customer){
         carts.add((Carts) customer);
     }
+    
+    /**
+     * 
+     */
+    public void removeCartAndBill(){
+        
+       Bill ned = currentEmployee.scanCart( front(), thisCounterNum, currentEmployee );
+       bills.push(ned);
+       carts.remove();
+       bills.pop().printBill();
+       
+    }
+    
+    
     
     /**
      * 
@@ -66,10 +80,6 @@ public class Counter<Carts>  {
         return (Cart) carts.element();
     }
     
-    /**
-     * 
-     */
-    public void enqueue(){}
-    
+
     
 }

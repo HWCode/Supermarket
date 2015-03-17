@@ -57,7 +57,7 @@ public class Bill {
         System.out.println("Time of billing: " + time);
         
         for(Pair pairs: this.billArray){
-            System.out.println(pairs.getItem() + " " + pairs.getNumber());
+            System.out.println(pairs.getItem().returnName() + " " + pairs.getNumber());
         }
     
         System.out.println("Total Bill: " + total);

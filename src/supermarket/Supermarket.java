@@ -16,9 +16,9 @@ public class Supermarket {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Item orange   = new Item( "Orange", 3 );
-        Item lime     = new Item( "Lime  ", 2); 
-        Item candy    = new Item( "Candy ", 300);
+        Item orange   = new Item( "Orange", 3 , false);
+        Item lime     = new Item( "Lime  ", 2 , false); 
+        Item candy    = new Item( "Pop ", 300, true);
         
         Cart cart   =    new Cart("Carl1");
         Cart cart1  =    new Cart("Carl2");
@@ -37,12 +37,14 @@ public class Supermarket {
         
         
         Counter counter = new Counter(new Employee("James"));
-        
+
         counter.addCart(cart);
         counter.addCart(cart1);
         counter.addCart(cart2);
-        cart.cycle();
-       System.out.println(counter.front().myName + " ");
+        
+       counter.removeCartAndBill();
+       //cart.cycle();
+       //System.out.println(counter.front().myName + " ");
         
         
         
