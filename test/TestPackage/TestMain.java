@@ -5,21 +5,10 @@
  */
 package TestPackage;
 
-import supermarket.*;
 /**
  *
  * @author Davyn
  */
-public class CounterTest {
-    
-    public boolean buildCounterTest(){
-        Item[] productShelf = MethodsForTesting.fillShelf();
-        
-    
-        return false;
-    }
-    
-
-    
+public class TestMain {
     
 }
