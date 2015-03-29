@@ -14,15 +14,15 @@ public class Item {
     private String name;
     private long id = 1000;
     private int price;
-    private boolean recycable;
+    private boolean recyclable;
     
     
             
-    public Item(String name, int price, boolean recyc){
+    public Item(String name, int price, boolean recycle){
         this.id = id++;
         this.name = name;
         this.price = price;
-        this.recycable = recyc;
+        this.recyclable = recycle;
      
     }
     /**
@@ -38,6 +38,11 @@ public class Item {
      */
     public long returnId(){
         return id;
+    }
+    
+    
+    public boolean isRecyclable(){
+        return this.recyclable;
     }
     
     /**

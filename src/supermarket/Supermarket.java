@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package supermarket;
-
 /**
- *
+ * This is used to debug random stuff, looking through would be most likely for entertainment 
+ * purposes 
  * @author Davyn
  */
 public class Supermarket {
@@ -16,6 +16,12 @@ public class Supermarket {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        
+        
+        
+        
+        /*
         Item orange   = new Item( "Orange", 3 , false);
         Item lime     = new Item( "Lime  ", 2 , false); 
         Item candy    = new Item( "Pop ", 300, true);
@@ -45,7 +51,7 @@ public class Supermarket {
        counter.removeCartAndBill();
        //cart.cycle();
        //System.out.println(counter.front().myName + " ");
-        
+        */
         
         
     }

@@ -17,14 +17,19 @@ public class Cart {
    
 
     
-    private final Stack<Item> bills;
+   // private final Stack<Item> bills;
     private ArrayList<Pair>     cartArray = new ArrayList<Pair>();
     public String myName;
     
     public Cart(String myName){
         this.myName = myName;
-        bills = new Stack();
+        //bills = new Stack();
     }
+    
+    public Cart(){
+        //Allows the creation of carts operated by nameless drones.
+    }
+    
     /**
      * 
      * @param item 
@@ -45,6 +50,25 @@ public class Cart {
         }
         
        
+    }
+    
+    /**
+     * Returns a pair of the users choosing.
+     * @param item
+     * @return 
+     */
+    public Pair returnItem(Item item){
+        Pair pairItem = null;
+        
+        if(!cartArray.isEmpty()){
+            for( Pair pair : cartArray ){
+                if( pair.getItem().equals(item) ){
+                    pairItem = pair;
+                }
+
+            }
+        }
+        return pairItem;
     }
     
   
@@ -72,7 +96,7 @@ public class Cart {
     }
     
     /**
-     * 
+     * Cycles through array and prints name of item and the amount of that item.
      */
     public void cycle(){
         for(Pair pair : cartArray){
@@ -85,7 +109,8 @@ public class Cart {
     }
     
     /**
-     * 
+     * This subclass creates stores and item and the amount of that item inside
+     * an object. Both this item can be seen through the methods provided.
      */
     public class Pair{
         

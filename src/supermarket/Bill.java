@@ -17,7 +17,7 @@ import supermarket.Cart.Pair;
 public class Bill {
     
     private ArrayList<Pair> billArray;
-    private int total;
+    private double total;
     private Employee myCashier;
     private int counterNumber;
     private String time;
@@ -31,6 +31,8 @@ public class Bill {
         
         for(Pair pairs: pair){
             total += pairs.getNumber() * pairs.getItem().returnPrice();
+            specialOffer(pairs);
+            recycleFee(pairs);
         }
     
     }
@@ -55,19 +57,41 @@ public class Bill {
         System.out.println("Cashier's name:  " + myCashier.getName());
         System.out.println("Cashier's id:    " + myCashier.getId() );
         System.out.println("Time of billing: " + time);
+        System.out.println();
         
         for(Pair pairs: this.billArray){
             System.out.println(pairs.getItem().returnName() + " " + pairs.getNumber());
         }
     
         System.out.println("Total Bill: " + total);
+        System.out.println("------------------");
     }
     
+    /**
+     * Applies special offer of buy 2 or more Cola and get one half price.
+     * @param pair 
+     */
+    public void specialOffer(Pair pair){
+        if( (pair.getItem().returnName().equals("Cola")) && (pair.getNumber()>=2) ){
+            total -=  pair.getItem().returnPrice();
+        }
+    
+    }
+    
+    /**
+     * For every item that is recyclable, a deposit of 0.10 is applied
+     * @param pair 
+     */
+    public void recycleFee(Pair pair){
+        if( pair.getItem().isRecyclable() ){
+            total += 0.10 * pair.getNumber();
+        }
+    }
     /**
      * 
      * @return Total cost of bill. 
      */
-    public int getTotal(){
+    public double getTotal(){
         return total;
     }
 }

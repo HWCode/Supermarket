@@ -30,7 +30,7 @@ public class Counter<Carts>  {
     }
     
     /**
-     * 
+     * Adds cart to queue
      * @param customer 
      */
     public void addCart(Cart customer){
@@ -38,7 +38,18 @@ public class Counter<Carts>  {
     }
     
     /**
-     * 
+     * Removes cart at the front without processing bills
+     */
+    public void removeCart(){
+        if(!carts.isEmpty()){
+            carts.remove();
+        }
+    
+    
+    }
+    
+    /**
+     * Removes cart from front of the queue and processes the bills.s
      */
     public void removeCartAndBill(){
         

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TestPackage;
+package tests;
 
 import supermarket.*;
 /**
@@ -13,7 +13,7 @@ import supermarket.*;
 public class MethodsForTesting {
     
     /**
-     * THis method fills a shelf with items for testing purposes
+     * This method fills a shelf with items for testing purposes
      * @return Item array 
      */
     public static Item[] fillShelf(){
